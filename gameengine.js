@@ -58,6 +58,9 @@ class GameEngine
         this.addEntity(new FlyMutant(this, -5, 0, 0.75));
         this.addEntity(new FlyMutant(this, -1000, 50, 0.4));
 
+        // add bugs
+        this.addEntity(new Bug(this, 20, 170, 1.2));
+
         // add metroid
         this.addEntity(new Metroid(this, 250, 170, 1));
 
