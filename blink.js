@@ -132,7 +132,7 @@ class Blink
 
 
         // Set initial values for Blinks world state
-        this.x = 50;
+        this.x = 300;
         this.y = 200;
         this.lastY = this.y;
         this.groundLevel = this.y;

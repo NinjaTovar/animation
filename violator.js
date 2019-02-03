@@ -4,7 +4,7 @@
  *
  * Single constructor takes in the game context as its parameter. (There is no default) 
  */
-class Bug
+class Violator
 {
     /**
      * Single constructor for Fly. Loads assets and sets intial parameters including
@@ -18,32 +18,33 @@ class Bug
      */
     constructor(game, startX, startY, size)
     {
-        this.flyLeftAnimation = new Animation
+        this.flyRightAnimation = new Animation
             (
-            AM.getAsset('./img/enemies/bug/BugRun_FaceLeft.png'),
-            53,    // frame width
-            54,     // frame height
-            2,      // sheet width
-            0.1,    // frame duration
-            5,      // frames in animation
+            AM.getAsset('./img/enemies/violator/ViolatorSwing_FaceRight.png'),
+            122,    // frame width
+            103,     // frame height
+            3,      // sheet width
+            0.2,    // frame duration
+            12,      // frames in animation
             true,   // to loop or not to loop
             size    // scale in relation to original image
             );
-        this.flyRightAnimation = new Animation
+        this.flyLeftAnimation = new Animation
             (
-            AM.getAsset('./img/enemies/bug/BugRun_FaceRight.png'),
-            53,    // frame width
-            54,     // frame height
-            2,      // sheet width
-            0.1,    // frame duration
-            5,      // frames in animation
+            AM.getAsset('./img/enemies/violator/ViolatorSwing_FaceLeft.png'),
+            122,    // frame width
+            103,     // frame height
+            3,      // sheet width
+            0.2,    // frame duration
+            12,      // frames in animation
             true,   // to loop or not to loop
             size    // scale in relation to original image
             );
 
+
         this.x = startX;
         this.y = startY;
-        this.speed = 400;
+        this.speed = 200;
         this.game = game;
         this.ctx = game.ctx;
         this.isHeadingRight = true;
@@ -142,15 +143,15 @@ class Bug
             }
         }
 
-        if (this.isHeadingRight)
-        {
-            this.x += this.game.clockTick * this.speed;
-            if (this.x > 750) this.isHeadingRight = false;
-        } else
-        {
-            this.x -= this.game.clockTick * this.speed;
-            if (this.x < 5) this.isHeadingRight = true;
-        }
+        //if (this.isHeadingRight)
+        //{
+        //    this.x += this.game.clockTick * this.speed;
+        //    if (this.x > 750) this.isHeadingRight = false;
+        //} else
+        //{
+        //    this.x -= this.game.clockTick * this.speed;
+        //    if (this.x < 5) this.isHeadingRight = true;
+        //}
     }
 
     // Helper booleans for state
